@@ -1,0 +1,25 @@
+{
+  "name": "just-go",
+  "version": "1.0.0",
+  "description": "Browser event-based customer service auto-guide system",
+  "private": true,
+  "workspaces": [
+    "just-go-fe",
+    "just-go-be"
+  ],
+  "scripts": {
+    "dev:fe": "yarn workspace just-go-fe dev",
+    "dev:be": "yarn workspace just-go-be start:dev",
+    "build:fe": "yarn workspace just-go-fe build",
+    "build:be": "yarn workspace just-go-be build",
+    "build": "yarn build:fe && yarn build:be"
+  },
+  "keywords": [
+    "rrweb",
+    "session-recording",
+    "user-tracking",
+    "analytics"
+  ],
+  "author": "",
+  "license": "MIT"
+}
