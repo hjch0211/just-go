@@ -39,13 +39,28 @@ just-go/
 ### 사전 요구사항
 - Node.js >= 18
 - Yarn
-- MongoDB
+- Docker & Docker Compose (MongoDB 실행용)
 
 ### 설치
 
 ```bash
 # 루트에서 모든 의존성 설치
 yarn install
+```
+
+### MongoDB 실행 (Docker)
+
+```bash
+# MongoDB 실행
+docker-compose up -d
+
+# MongoDB: localhost:27017
+
+# 중지
+docker-compose down
+
+# 데이터까지 삭제하고 중지
+docker-compose down -v
 ```
 
 ### 환경 변수 설정
@@ -58,8 +73,8 @@ VITE_API_URL=http://localhost:3000
 **Backend (just-go-be/.env)**
 ```env
 PORT=3000
-MONGODB_URI=mongodb://localhost:27017/just-go
-JWT_SECRET=your-secret-key-change-this-in-production
+MONGODB_URI=mongodb://admin:admin123@localhost:27017/just-go?authSource=admin
+JWT_SECRET=dev-secret-key-please-change-in-production
 JWT_EXPIRES_IN=7d
 FRONTEND_URL=http://localhost:5173
 ```
